@@ -1,5 +1,6 @@
 # RlChall-Newsletter
-Easy to maintain newsletter based on Django, that has was made for a start-up.
+Easy to maintain newsletter based on Django, that was made for a start-up.
+
 
 First, you have to install pip for Python3.X.
  Despite the methods given in many tutorials around the internet, there's much more simple way to do so.
