@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% load staticfiles %}
+<html lang="pl">
+<head>
+{% block head %}{% endblock %}
+	<link rel="stylesheet" href="{% static "css/normalize.css" %}" type="text/css">
+	<link rel="stylesheet" href="{% static "css/styles.css" %}" type="text/css">
+	<link rel="stylesheet" href="{% static "css/responsive.css" %}" type="text/css">
+	<meta charset="UTF-8">
+	<title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+	<header>{% block header %}{% endblock %}</header>
+	<div class="container text-center">
+		<h1 class='rl'>Real Challenge</h1>
+		<h3 class='chall'>Live, challenge, gain.</h3>
+	{% block container %} {% endblock %}
+	</div>
+	<footer>{% block footer %}{% endblock %}</footer>
+</body>
+</html>

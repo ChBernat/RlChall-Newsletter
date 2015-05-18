@@ -1,0 +1,26 @@
+{% extends "includes/base_registered.html" %}
+
+
+{% block head %} {% endblock %}
+{% block title %}Mails Manager{% endblock %}
+
+{% block container %}
+
+<table class="table table-bordered">
+<tr>
+	<td><h4>ID</h4></td>
+	<td><h4>Adres e-mail</h4></td>
+</tr>
+{% for item in mail_list %}
+	<tr>
+		<td>{{item.id}}</td>
+		<td>{{ item.mail }}</td>
+		<td>
+			<form method='post' action=''> {% csrf_token %}
+				<button class="btn bnt-lg btn-warning" type="submit" value="{{item.id}}" name='del'>Usuń</button>
+			</form>
+		</td>
+	</tr>
+{% endfor %}
+</table>
+{% endblock %}

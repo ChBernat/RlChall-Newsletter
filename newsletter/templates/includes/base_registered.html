@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load widget_tweaks %}
+{% load staticfiles %}
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<html lang="pl">
+<head>
+{% block head %}{% endblock %}
+	<link rel="stylesheet" href="{% static "css/normalize.css" %}" type="text/css">
+	<link rel="stylesheet" href="{% static "css/styles.css" %}" type="text/css">
+	<link rel="stylesheet" href="{% static "css/responsive.css" %}" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<meta charset="UTF-8">
+	<title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+	<header>{% block header %}{% endblock %}</header>
+	<div class="container-fluid text-center">
+		<header>
+			<nav class="navbar navbar-default">
+			  <div class="container-fluid">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="/logged-out/">Wyloguj się</a>
+			    </div>
+
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      <ul class="nav navbar-nav">
+			        <li><a href="/panel/mails-manager/">Adresy e-mail</a></li>
+			        <li><a href="/panel/news-manager/">Zarządzaj powiadomieniami</a></li>
+			      </ul>
+			    </div><!-- /.navbar-collapse -->
+			  </div><!-- /.container-fluid -->
+			</nav>
+			<h1 class='rl'>Real Challenge</h1>
+			<h3 class='chall'>Live, challenge, gain.</h3>
+		</header>
+	<div class="container well">
+	{% block container %} {% endblock %}
+	</div>
+
+	</div>
+	<footer>{% block footer %}{% endblock %}</footer>
+</body>
+</html>

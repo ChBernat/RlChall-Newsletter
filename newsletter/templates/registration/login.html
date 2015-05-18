@@ -1,0 +1,25 @@
+{% extends "includes/base.html" %}
+{% load widget_tweaks %}
+
+{% block head %}{% endblock %}
+{% block title %}Log-in{% endblock %}
+{% block container %}
+ <form action="" method="post" class="form-inline"> {% csrf_token %}
+ 	<div class="form-group">
+ 		<label for='username'>
+ 			<h3>Login:</h3>
+	 	</label>
+		{{ form.username|add_class:"form-control"}}
+		<label for="password">
+			<h3>Hasło:</h3>
+		</label>
+		{{ form.password|add_class:"form-control"}}
+		<input type="hidden" name="next" value="{{ next|escape }}" />
+  		<button type="submit" class='btn btn-lg btn-info'>Zaloguj się!</button>
+	</div>
+  </form>
+	<div class='form-group text-left'>
+		<button OnClick="javascript:history.go(-1);" class='btn btn-lg btn-primary'>Wróć!</button>
+	</div>
+
+{% endblock %}

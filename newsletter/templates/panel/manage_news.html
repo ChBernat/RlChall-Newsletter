@@ -1,0 +1,38 @@
+{% extends "includes/base_registered.html" %}
+{% load widget_tweaks %}
+
+{% block head %} {% endblock %}
+{% block title %}Newsletter Manager{% endblock %}
+
+{% block container %}
+<form action="" class="form-group" method="post"> {% csrf_token %}
+	<div class="form-group">
+		<label for="title">Tytuł</label>
+		{{ form.title|add_class:"form-control" }}
+	</div>
+	<div class="form-group">
+		<label for="message">Treść wiadomości:</label>
+		{{ form.message|add_class:"form-control" }}
+	</div>
+	<button class="btn btn-primary btn-block">Zapisz i wyślij!</button>
+</form>
+
+<br>
+
+<div class="panel panel-default text-left well">
+  {% for object in msg_list %}
+	<div class="well">
+		<div class="panel-heading">
+			<h3 class="panel-title">Tytuł: {{ object.subject }}</h3>
+		</div>
+		<div class="panel-heading">
+			<h5 class='panel-title'>Data wysłania: {{object.date}}</h5>
+		</div>
+	  <div class="panel-body">
+	    {{ object.news_msg }}
+	  </div>
+  </div>
+  <br>
+  {% endfor %}
+</div>
+{% endblock %}

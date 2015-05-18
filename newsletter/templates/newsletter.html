@@ -1,0 +1,18 @@
+{% extends 'includes/base.html' %}
+{% load widget_tweaks %}
+
+{% block head %}{% endblock %}
+{% block title %}Newsletter{% endblock %}
+{% block container %}
+<div class="form-group">
+{% if error %}
+<h4 class="text-primary">Ten adres e-mail został już dodany.</h4>
+{% endif %}
+	<form action="" method="post" class='form-inline'> {% csrf_token %}
+	<label for="id_mail"><h3>Twój adres e-mail:</h3></label>
+		{{ form.mail|add_class:"form-control" }}
+		<input type="hidden" name="next" value="{{ next|escape }}" />
+		<button type="submit" class="btn btn-lg btn-warning">Subskrybuję!</button>
+	</form>
+</div>
+{% endblock %}
